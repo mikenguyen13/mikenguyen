@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Library
+
 ```{r setup}
 library(mikenguyen)
 ```
@@ -22,6 +24,8 @@ library(mikenguyen)
 ```{r}
 library(ggplot2)
 ```
+
+# Figures
 Without AMA theme
 
 ```{r}
@@ -35,12 +39,53 @@ Without AMA theme
 With AMA theme
 
 ```{r}
- ggplot(mtcars, aes(x = mpg, y = wt, color = factor(cyl))) +
+ p <- ggplot(mtcars, aes(x = mpg, y = wt, color = factor(cyl))) +
     geom_point() +
     ggtitle("Scatter Plot of MPG vs. Weight") +
     xlab("Miles per Gallon (MPG)") +
     ylab("Weight (1000 lbs)") +
     amatheme()
+p
+```
+In science, it's essential to organize your work properly. Here's a simple way to do it: Whenever you perform an analysis, save the results in an archive folder with the date of the analysis. At the same time, keep a current copy of the file in the main folder, so it's always up-to-date. This way, when you work on your Latex file, you'll use the latest version.
+
+But what if you make a mistake and need to refer to older versions? No worries! You can easily access the past figures and tables by looking at the dated archive folder. If necessary, you can also go back to your previous code to see what you did differently.
+
+By following this method, you'll stay organized, have access to both current and past versions, and be confident in your scientific work.
+
+Export Figure 
+
+```{r}
+export_fig_ama(figure = p, filename =  "fig", filepath = "output_dir")
 ```
 
+
+# Tables
+
+```{r}
+# Create a data frame
+df <- data.frame(
+  a = c(1.234, 2.345, 3.456),
+  b = c(4.567, 5.678, 6.789),
+  c = c("x", "y", "z")
+)
+
+# Print the data frame
+print(df)
+```
+Get a nice table (without only 2 decminal points)
+
+```{r}
+nice_tab(df)
+```
+Export table 
+
+```{r}
+export_tab_ama(
+  table = df,
+  filename = "df",
+  filepath = "output_dir",
+  caption = "Caption"
+)
+```
 

@@ -1,3 +1,6 @@
+# Load the necessary packages
+library(ggplot2)
+
 test_that("amatheme returns a ggplot2 theme object", {
   ggplot(mtcars, aes(x = mpg, y = wt, color = factor(cyl))) +
     geom_point() +
@@ -6,4 +9,3 @@ test_that("amatheme returns a ggplot2 theme object", {
     ylab("Weight (1000 lbs)") +
     amatheme()
 })
-

@@ -17,6 +17,9 @@ Config/testthat/edition: 3
 Imports:
 	ggplot2 (>= 3.4.2),
 	ggthemes (>= 4.2.4),
-	tidyverse (>= 2.0.0)
+	tidyverse (>= 2.0.0),
+	lubridate (>= 1.9.2),
+	rio (>= 0.5.29),
+	xtable (>= 1.8.4)
 RoxygenNote: 7.2.3
 VignetteBuilder: knitr
