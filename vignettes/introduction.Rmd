@@ -1,0 +1,46 @@
+---
+title: "introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mikenguyen)
+```
+
+
+```{r}
+library(ggplot2)
+```
+Without AMA theme
+
+```{r}
+ ggplot(mtcars, aes(x = mpg, y = wt, color = factor(cyl))) +
+    geom_point() +
+    ggtitle("Scatter Plot of MPG vs. Weight") +
+    xlab("Miles per Gallon (MPG)") +
+    ylab("Weight (1000 lbs)")
+```
+
+With AMA theme
+
+```{r}
+ ggplot(mtcars, aes(x = mpg, y = wt, color = factor(cyl))) +
+    geom_point() +
+    ggtitle("Scatter Plot of MPG vs. Weight") +
+    xlab("Miles per Gallon (MPG)") +
+    ylab("Weight (1000 lbs)") +
+    amatheme()
+```
+
+
